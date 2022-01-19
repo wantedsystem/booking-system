@@ -1,0 +1,198 @@
+{
+  "VERSION": "DEV_V1.0",
+  "Bookings": "0x33930dBBcCa302492226170A333F1166B0d03d7c",
+  "Bookings_abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uuid",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "date",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "startTime",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "endTime",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "userId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "roomId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "evtBooking",
+      "type": "event",
+      "signature": "0x92a68de4b572260584e02a55375b0aaf9e6b8808ad36ab01ba54535f3c9ebefe"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "uuid",
+          "type": "string"
+        }
+      ],
+      "name": "evtDeleteBooking",
+      "type": "event",
+      "signature": "0x19cc6fa9244fc0abd4d4e6dc2eed94f134bec934d544a24546f7553e79637b89"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "uuid",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "date",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "startTime",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "endTime",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "userId",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "roomId",
+          "type": "string"
+        }
+      ],
+      "name": "addBooking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xb9066032"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "uuid",
+          "type": "string"
+        }
+      ],
+      "name": "getBooking",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "internalType": "string",
+              "name": "uuid",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "date",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "startTime",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "endTime",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "userId",
+              "type": "string"
+            },
+            {
+              "internalType": "string",
+              "name": "roomId",
+              "type": "string"
+            },
+            {
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct Bookings.BookingStruct",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true,
+      "signature": "0x9624493f"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "uuid",
+          "type": "string"
+        }
+      ],
+      "name": "deleteBooking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function",
+      "signature": "0xff32c63c"
+    }
+  ]
+}

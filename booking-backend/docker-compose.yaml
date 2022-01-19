@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  db:
+    container_name: booking_db
+    image: postgres:14.1
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+      POSTGRES_PORT: ${DB_PORT}
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+      - ./docker-volumes/pgdata:/var/lib/postgresql/data
+    networks:
+      - net
+
+  app:
+    container_name: booking_app
+    restart: always
+    build: .
+    env_file: .env.prod
+    ports:
+      - ${PORT}:${PORT}
+    external_links:
+      - db
+    depends_on:
+      - db
+    networks:
+      - net
+
+networks:
+  net:
+    driver: bridge
+
+volumes:
+  pgdata:

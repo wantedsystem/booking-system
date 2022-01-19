@@ -1,0 +1,23 @@
+{
+  "name": "booking-system-smart-contract",
+  "version": "1.0.0",
+  "description": "Booking Smart Contract",
+  "Author": "Amine HARTY",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "deploy": "truffle migrate --network rinkeby --verbose-rpc",
+    "redeploy": "truffle migrate --reset  --network rinkeby --verbose-rpc",
+    "compile": "truffle compile --verbose-rpc",
+    "test": "truffle test "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^14.2.0",
+    "truffle-hdwallet-provider": "^1.0.17"
+  }
+}

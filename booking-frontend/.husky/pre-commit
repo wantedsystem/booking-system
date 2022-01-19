@@ -1,0 +1,40 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+red='\033[0;31m'
+green='\033[0;32m'
+yellow='\033[0;33m'
+no_color='\033[0m'
+
+echo -e "${yellow}Checking ts standards...${no_color}"
+yarn types ||
+(
+    echo -e "${red}TypeScript check failed${no_color}"
+    false;
+)
+
+echo -e "${yellow}Fix linting...${no_color}"
+yarn lint ||
+(
+    echo -e "${red}Fixing lint failed${no_color}"
+    false;
+)
+
+echo -e "${yellow}Checking format...${no_color}"
+yarn check-format ||
+(
+    echo -e "${red}Checking format failed${no_color}"
+    false;
+)
+
+
+echo -e "${yellow}Formatting code using prettier...${no_color}"
+yarn format ||
+(
+    echo -e "${red}Formatting code failed${no_color}"
+    false;
+)
+
+git add -A .
+
+echo -e "${green}All tests run wih success, commiting to the repo...${no_color}"
